@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 import random
+import math
 number = random.randint(-10000, 10000)
-print(f"Last digit of {number} is {abs(number % 10)}", end=" ")
-dig = abs(number % 10)
+dig = abs(math.fmod(number, 10))
+print(f"Last digit of {number} is {dig}", end=" ")
 if (dig > 5):
     print(f"and is greater than 5")
 elif (dig == 0):
