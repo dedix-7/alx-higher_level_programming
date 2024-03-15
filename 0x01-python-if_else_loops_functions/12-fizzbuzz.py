@@ -5,11 +5,11 @@ def fizzbuzz():
     x = 3
     y = 5
     for dig in range(1, 101):
-        if ((dig % x) and (dig % y)):
-            print(f"FizzBuzz")
-        elif (dig % x):
-            print (f"Fizz")
-        elif (dig % y):
-            print(f"Buzz")
+        if ((dig % x) == 0 and (dig % y) == 0):
+            print(f"FizzBuzz", end=" ")
+        elif (dig % x) == 0:
+            print(f"Fizz", end=" ")
+        elif (dig % y) == 0:
+            print(f"Buzz", end=" ")
         else:
-            print(f"{dig}")
+            print(f"{dig}", end=" ")
