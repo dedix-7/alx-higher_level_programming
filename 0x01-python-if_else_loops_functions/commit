@@ -1,0 +1,8 @@
+#!/bin/bash
+echo "Emter the files you want to commit and push"
+read files
+echo "What is your commit message"
+read message
+git add $files
+git commit $files
+git push -m "$message"
