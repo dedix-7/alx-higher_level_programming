@@ -1,17 +1,12 @@
 #!/usr/bin/python3
-# a module to print a entence in uppercase
+# 8-uppercase.py
+
+
 
 def uppercase(str):
-    """ A function to print uppercase repr of strings
-    """
-
+    """Print a string in uppercase."""
     for c in str:
-        char = ord(c)
-        low = ord(c)
-        upp = ord(c) - 32
-        if low in range(97, 123):
-            char = upp
-        else:
-            char = low
-        print("{}".format(chr(char)), end="")
-    print("".format())
+        if ord(c) >= 97 and ord(c) <= 122:
+            c = chr(ord(c) - 32)
+        print("{}".format(c), end="")
+    print("")
