@@ -4,7 +4,7 @@ import math
 number = random.randint(-10000, 10000)
 dig = math.fmod(number, 10)
 dig = int(dig)
-print(f"Last digit of {number} is {dig} ", end=" ")
+print(f"Last digit of {number} is {dig}", end=" ")
 if (dig > 5):
     print("and is greater than 5")
 elif (dig == 0):
