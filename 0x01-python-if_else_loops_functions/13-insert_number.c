@@ -2,7 +2,7 @@
 /**
  * insert_node - insert a node to a sorted linked lists
  * @head: address of the head
- * @n: number data part of lits
+ * @number: number data part of lits
  * Return: address of node or null on failure
  */
 listint_t *insert_node(listint_t **head, int number)
