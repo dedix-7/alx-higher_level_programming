@@ -2,7 +2,8 @@
 # a script to print names defined in a given module
 
 import hidden_4
-for word in dir(hidden_4):
-    if (word[:2] == "__"):
-        continue
-    print(word)
+if __name__ == "__main__":
+    for word in dir(hidden_4):
+        if (word[:2] == "__"):
+            continue
+        print(word)
