@@ -8,4 +8,4 @@ if __name__ == "__main__":
     if (lengt > 1):
         for i in (sys.argv[1:]):
             num += int(i)
-        print(f"{num}")
+    print(f"{num}")
