@@ -1,0 +1,4 @@
+#!/usr/bin/python3
+# simple calc with command line args
+
+import sys, calculator_1
