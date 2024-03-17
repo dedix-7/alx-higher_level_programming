@@ -3,12 +3,11 @@
 
 def print_matrix_integer(matrix=[[]]):
     if (matrix):
-        for row in matrix:
-            size = len(matrix[row])
-            i = 0
-            for col in row:
-                print("{:d}".format(col))
-                i += 1
-                if (i < (size - 1)):
-                    print(" ")
-            print()
+        for i in range(len(matrix)):
+            size = len(matrix[i])
+            for j in range(size):
+                if (j != size - 1):
+                    endchar = " "
+                else:
+                    endchar = ""
+                print("{:d}".format(matrix[i][j]), end=endchar)
