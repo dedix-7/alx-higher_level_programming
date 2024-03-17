@@ -11,3 +11,4 @@ def print_matrix_integer(matrix=[[]]):
                 else:
                     endchar = ""
                 print("{:d}".format(matrix[i][j]), end=endchar)
+            print()
