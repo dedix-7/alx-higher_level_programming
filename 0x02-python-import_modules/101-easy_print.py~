@@ -1,0 +1,5 @@
+#!/usr/bin/python3
+# a script to use the os moduel to print
+
+import os
+os.write(1, "#pythoniscool\n")
