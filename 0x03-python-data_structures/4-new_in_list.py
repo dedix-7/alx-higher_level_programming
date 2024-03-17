@@ -1,4 +1,4 @@
-#!/usr/in/python3
+#!/usr/bin/python3
 # a module to replace an lement in a copy
 
 def new_in_list(my_list, idx, element):
