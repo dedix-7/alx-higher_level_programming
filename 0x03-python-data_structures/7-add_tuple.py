@@ -5,27 +5,21 @@ def add_tuple(tuple_a=(), tuple_b=()):
     """ A function to add tuples enforcing 2 tuples
     """
 
-    e = None
-    one = ()
-    two = ()
-    for i in range(2):
-        try:
-            tuple_a[i]
-        except exception as p:
-            e = "some index error"
-        if (e):
-            one += (0,)
+#!/usr/bin/python3
+# add two tuples
+
+
+def add_tuple(tuple_a=(), tuple_b=()):
+    if len(tuple_a) < 2:
+        if len(tuple_a) == 0:
+            tuple_a = (0, 0)
         else:
-            one += (tuple_a[i],)
-    e = None
-    for r in range(2):
-        try:
-            tuple_b[r]
-        except IndexError as p:
-            e = "some error"
-        if (e):
-            two += (0,)
+            tuple_a += (0,)
+    if len(tuple_b) < 2:
+        if len(tuple_b) == 0:
+            tuple_b = (0, 0)
         else:
-            two += (tuple_b[r],)
-    ret = ((one[0] + two[0]), (one[1] + two[1]))
-    return (ret)
+            tuple_b += (0,)
+    sum_tuple1 = tuple_a[0] + tuple_b[0]
+    sum_tuple2 = tuple_a[1] + tuple_b[1]
+    return (sum_tuple1, sum_tuple2)
