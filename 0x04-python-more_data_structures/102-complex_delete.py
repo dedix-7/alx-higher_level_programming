@@ -9,4 +9,4 @@ def complex_delete(a_dictionary, value):
                 keys.append(k)
         for u in keys:
             del a_dictionary[u]
-        return (a_dictionary)
+    return (a_dictionary)
