@@ -7,4 +7,4 @@ class LockedClass():
     """ a class with limited instance objects
     """
 
-    __slots__("first_name")
+    __slots__ = ("first_name")
