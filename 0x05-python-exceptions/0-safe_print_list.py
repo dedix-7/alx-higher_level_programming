@@ -6,9 +6,10 @@ def safe_print_list(my_list=[], x=0):
     tot = 0
     for i in range(0, x):
         try:
-            y = mylist[i]
+            y = my_list[i]
             print(y, end="")
             tot += 1
         except(IndexError):
             break
-    return (num)
+    print()
+    return (tot)
