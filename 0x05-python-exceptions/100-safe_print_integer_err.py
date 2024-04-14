@@ -2,6 +2,7 @@
 import sys
 # print an int and errs to stderr
 
+
 def safe_print_integer_err(value):
     # funtion to print the int
     try:
