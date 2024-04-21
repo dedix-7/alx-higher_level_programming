@@ -11,17 +11,17 @@ class Square:
         """ Instantiating the size of the class
         """
 
-        self.__size = size
+        self.size(size)
 
     @property
-    def __size(self):
+    def size(self):
         """ Getter for the size attribute
         """
 
         return (self.__size)
 
-    @__size.setter
-    def __size(self, value):
+    @size.setter
+    def size(self, value):
         """ setter for the size attribute
         """
 
