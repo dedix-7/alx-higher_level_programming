@@ -29,11 +29,11 @@ class Square:
         """ A method setter for the soze attriute
         """
 
-        if ((type(size)) is not int):
+        if ((type(value)) is not int):
             raise TypeError('size must be an integer')
-        if (size < 0):
+        if (value < 0):
             raise ValueError('size must be >= 0')
-        self.__size = size
+        self.__size =value
 
     def area(self):
         """ A ,ethod to return the area of he square
