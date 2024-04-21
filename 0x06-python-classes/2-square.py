@@ -13,7 +13,7 @@ class Square:
 
         self.__size = size
 
-        @property
+    @property
     def __size(self):
         """ Getter for the size attribute
         """
@@ -31,4 +31,3 @@ class Square:
             raise ValueError('size must be >= 0')
         self.__size = value
         return (self.__size)
-
