@@ -11,7 +11,11 @@ class Square:
         """ Instantiating the size of the class
         """
 
-        self.__size = size
+        if ((type(value)) is not int):
+            raise TypeError('size must be an integer')
+        if (value < 0):
+            raise ValueError('size must be >= 0')
+        self.__size = value
 
     @property
     def size(self):
