@@ -46,10 +46,6 @@ class Node:
         """ pseudo constructor for the nide class
         """
 
-        if (type(data) is not int):
-            raise TypeError('data must be an integer')
-        if (type(next_node) not in [None, Node]):
-            raise TypeError('next_node must be a Node object')
         self.__data = data
         self.__next_node = next_node
 
