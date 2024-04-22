@@ -50,10 +50,7 @@ class Node:
             raise TypeError('data must be an integer')
         else:
             self.__data = data
-        if (type(next_node) not in [None, Node]):
-            raise TypeError('next_node must be a Node object')
-        else:
-            self.__next_node = next_node
+        self.__next_node = next_node
 
 
 class SinglyLinkedList:
