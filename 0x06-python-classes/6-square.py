@@ -57,6 +57,9 @@ class Square:
               self - instance
         """
 
+        if (self.__size == 0):
+            print()
+            return
         for u in range(self.__position[1]):
             print()
         if (self.__size == 0):
