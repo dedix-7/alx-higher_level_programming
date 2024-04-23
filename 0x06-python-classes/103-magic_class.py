@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-from math import pi
 """ A script looking to disassemblr the python bytecode
 """
+from math import pi
 
 
 class MagicClass:
