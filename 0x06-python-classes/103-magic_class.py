@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+from math import pi
 """ A script looking to disassemblr the python bytecode
 """
 
@@ -20,12 +21,10 @@ class MagicClass:
 
         """
 
-        from math import pi
         return ((math.pi) * (self.__radius ** 2))
 
     def circumference(self):
         """ method to give the circmference
         """
 
-        from math import pi
         return (2 * pi * self.__radius)
