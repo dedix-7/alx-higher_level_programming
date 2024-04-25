@@ -94,13 +94,13 @@ class Rectangle:
 
         pr = []
         for hei in range(self.__height):
-            for wid in (self.__width):
+            for wid in range(self.__width):
                 pr.append('#')
             pr.append('\n')
         return (''.join(pr))
 
-    def __repr__(self):
+#    def __repr__(self):
         """ canonical reprsenation
         """
 
-        return (self.__width, self.__height)
+#        return (f"Rectangle({self.__width}, {self.__height})")
