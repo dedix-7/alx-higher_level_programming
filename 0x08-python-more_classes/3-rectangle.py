@@ -97,7 +97,7 @@ class Rectangle:
             for wid in range(self.__width):
                 pr.append('#')
             pr.append('\n')
-        return (''.join(pr))
+        return (''.join(pr[:-1]))
 
 #    def __repr__(self):
         """ canonical reprsenation
