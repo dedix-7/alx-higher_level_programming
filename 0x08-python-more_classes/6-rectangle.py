@@ -73,7 +73,7 @@ class Rectangle:
         if (height < 0):
             raise ValueError('height must be >= 0')
         self.__height = height
-        number_of_instance += 1
+        type(self).number_of_instances += 1
 
     def area(self):
         """ Gives the area of the rectangle
@@ -114,5 +114,5 @@ class Rectangle:
         """ method to call when an instance is deleted
         """
 
-        number_of_instances -= 1
+        type(self).number_of_instances -= 1
         print('Bye rectangle...')
