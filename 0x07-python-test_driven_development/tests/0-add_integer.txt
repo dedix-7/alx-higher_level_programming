@@ -1,6 +1,37 @@
 let's test the add function we created earlier
 let's test for the existence of add_integer function
 I forgot to import the 0-add_integer module
->>> import 0-add_integer
+
+>>> add_integer = __import__("0-add_integer").add_integer
 >>> add_integer(1, 1)
 2
+>>> add_integer(1)
+99
+>>> add_integer('a', 6)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+>>> add_integer('a', 'b')
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+>>> add_integer(78, 'l'):
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+>>> val = float("inf")
+>>> add_integer(val, 6)
+inf
+>>> negval = float("-inf")
+>>> add_integer(negval, 8)
+-inf
+>>> add_integer({re: 78}, 7)
+Traceback (most recent call last):
+...
+a must be an integer
+>>> add_integer([97, 89], 76)
+Traceback (most recent call last):
+...
+a must be an integer
+
+
