@@ -37,3 +37,9 @@ TypeError: a must be an integer
 Traceback (most recent call last):
 ...
 TypeError: a must be an integer
+
+>>> tree = float('NaN')
+>>> add_integer(tree, 78)
+Traceback (most recent call last):
+...
+ValueError: cannot convert float NaN to integer
