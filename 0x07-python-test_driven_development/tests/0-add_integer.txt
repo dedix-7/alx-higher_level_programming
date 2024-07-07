@@ -1,0 +1,6 @@
+let's test the add function we created earlier
+let's test for the existence of add_integer function
+I forgot to import the 0-add_integer module
+>>> import 0-add_integer
+>>> add_integer(1, 1)
+2
