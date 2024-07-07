@@ -1,0 +1,46 @@
+# a doc to tests a matrix division
+========================================================
+a series for a matrix divisioon
+
+=====================================
+
+>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+>>> matrix_divided([[9, 8, 7], [4, 5, 6]], 0)
+Traceback (most recent call last):
+...
+ZeroDivisionError: divsion by zero
+>>> matrix_divided([1, 2, 3, 4], 8)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> matrix_divided([[6, 7, 8], ['y', 8, 9]], 8)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> matrix_divided([[8, 7, [8, 9]], [5, 6, {'re': 65}]], 7)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> matrix_divided([[float('inf'), 7], [7, 8]], 1)
+[[inf, 7], [7, 8]]
+>>> matrix_divided([[1, 2, 3, 4],[5, 6, 7,8]], 1)
+[[1, 2, 3, 4], [5, 6, 7, 8]]
+>>> matrix_divided([[3, 3, 3], [3, 3, 3]])
+[[1.50, 1.50, 1.50], [1.50, 1.50, 1.50]]
+>>> matrix_divided([[1, 2, 3, 4], [5, 6]], 2)
+Traceback (most recent call last):
+...
+TypeError: Each row of the matrix must have the same size
+>>> matrix_divided([[2, 3], [5, 6, 7, 8]])
+Traceback (most recent call last):
+...
+TypeError: Each row of the matrix must have the same size
+>>> matrix_divided([[9, 7, 6], [6, 7, 8]], [4, 5]], 'ou')
+Traceback (most recent call last):
+...
+TypeError: div must be a number
+>>> matrix_divided([[23, 5, 8], [4, 4, 4]], {'re': 4})
+Traceback (most recent call last):
+...
+TypeError: div must be a number
+
