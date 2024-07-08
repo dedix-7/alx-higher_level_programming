@@ -31,11 +31,11 @@ TypeError: matrix must be a matrix (list of lists) of integers/floats
 Traceback (most recent call last):
 ...
 TypeError: Each row of the matrix must have the same size
->>> matrix_divided([[2, 3], [5, 6, 7, 8]])
+>>> matrix_divided([[2, 3], [5, 6, 7, 8]], 4)
 Traceback (most recent call last):
 ...
 TypeError: Each row of the matrix must have the same size
->>> matrix_divided([[9, 7, 6], [6, 7, 8]], [4, 5]], 'ou')
+>>> matrix_divided([[9, 7, 6], [6, 7, 8]], 'ou')
 Traceback (most recent call last):
 ...
 TypeError: div must be a number
@@ -43,4 +43,3 @@ TypeError: div must be a number
 Traceback (most recent call last):
 ...
 TypeError: div must be a number
-

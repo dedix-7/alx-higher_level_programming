@@ -1,6 +1,7 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """ A module to divide a matrixxx
 """
+
 
 def matrix_divided(matrix, div):
     """ A function to divide a lists of lists with a div
@@ -10,8 +11,9 @@ def matrix_divided(matrix, div):
          matrix: must be a lists of lists of integers or floats
     """
 
+    tre = "matrix must be a matrix (list of lists) of integers/floats"
     if (type(matrix) is not list):
-        raise TypeError('matrix must be a matrix (list of lists) of integers/floats')
+        raise TypeError(tre)
     mess = "matrix must be a matrix (list of lists) of integers/floats"
     if (type(div) not in [int, float]):
         raise TypeError('div must be a number')
