@@ -26,5 +26,5 @@ def matrix_divided(matrix, div):
         size = len(matrix[0])
         if (len(matrix[i]) != size):
             raise TypeError('Each row of the matrix must have the same size')
-    treys = [[x / div for x in matrix] for x in matrix]
+    treys = [[round((j / div), 2) for j in x] for x in matrix]
     return (treys)
