@@ -1,0 +1,8 @@
+#!/usr/bin/python3
+""" a script with a function to call a name
+ It just has one function
+"""
+
+
+def say_my_name(first_name, last_name=""):
+    "
