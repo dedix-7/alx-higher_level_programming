@@ -1,0 +1,43 @@
+================================
+
+A test to see my string manipulation functio is doing fine
+
+================================
+
+Argumenst to the function
+
+***********************************
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation(98)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+>>> text_indentation('string1', 'string2')
+Traceback (most recent call last):
+...
+TypeError: text_indentation() takes 1 positional argument but 2 were given
+>>> text_indentation(['tree'])
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+>>> text_indentation({'tree':'forid'})
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+**********************************
+Correct usage
+
+=================================
+>>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit.""")
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+<BLANKLINE>
+>>> text_indentation('  ')
+<BLANKLINE>
+>>> text_indentation('string without said chars')
+string without said chars
+>>> text_indentation('try one: in the middle')
+try one:
+<BLANKLINE>
+in the middle
