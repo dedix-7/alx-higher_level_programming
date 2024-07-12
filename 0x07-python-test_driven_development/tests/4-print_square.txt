@@ -1,0 +1,58 @@
+Tests for the printing sqaure function
+
+-------------------------------------------
+
+Function exixts
+
+-------------------------------------------
+
+>>> printer = __import__("4-print_square").print_square
+>>> printer()
+Traceback (most recent call last):
+...
+TypeError: print_square() missing 1 required positional argument: 'size'
+>>> printer('ok')
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+>>> printer([87, 98])
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+>>> printer(float('inf'))
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+>>> printer(5.6)
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+>>> printer(-6.7)
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+>>> printer({'key':'value'})
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+>>> printer(-7)
+Traceback (most recent call last):
+...
+ValueError: size must be >= 0
+>>> printer(0)
+>>> printer(1)
+#
+>>> printer(4)
+####
+####
+####
+####
+
+>>> printer(7)
+#######
+#######
+#######
+#######
+#######
+#######
+#######
