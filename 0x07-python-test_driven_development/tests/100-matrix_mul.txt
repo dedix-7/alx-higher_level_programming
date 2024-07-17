@@ -1,0 +1,80 @@
+------------------------------------------------------------
+
+Tests for multiplying two matrices
+
+-----------------------------------------------------
+
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+>>> res = matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+>>> print(res)
+[[7, 10], [15, 22]]
+>>> res = matrix_mul([[1, 2]], [[3, 4], [5, 6]])
+[[13, 16]]
+>>> res = matrix_mul([[1, 2]], 6)
+Traceback (most recent call last):
+...
+TypeError: m_b must be a list
+>>> res = matrix_mul([[1, 2]], 'tree')
+Traceback (most recent call last):
+...
+TypeError: m_b must be a list
+>>> res = matrix_mul([[1, 2]])
+Traceback (most recent call last):
+...
+TypeError: matrix_mul missing 1 required positional argument: 'm_b'
+>>> res = matrix_mul()
+Traceback (most recent call last)
+...
+TypeError: matrix_mul missing 2 required positional arguments: 'm_a' and 'm_b'
+>>> res = matrix_mul(5, [[6, 7], [6, 7]])
+Traceback (most recent call last):
+...
+TypeError: m_a must be a list
+>>> res = matrix_mul('stupid', [[3, 4], [5, 6]])
+Traceback (most recent call last):
+...
+TypeError: m_a must be a list
+res = matrix_mul([1, 2], [[3, 4], [5, 6]])
+Traceback (most recent call last):
+...
+TypeError: m_a must be a list of lists
+>>> res = matrix_mul([[1, 2]], [3, 4])
+Traceback (most recent call last):
+...
+TypeError: m_b must be a list of lists
+>>> res = matrix_mul([], [[3, 4], [5, 6]])
+Traceback (most recent call last):
+...
+ValueError: m_a can't be empty
+>>> res = matrix_mul([[]], [[3, 4], [5, 6]])
+Traceback (most recent call last):
+...
+ValueError: m_a can't be empty
+>>> res = matrix_mul([[1, 2]], [])
+Traceback (most recent call last):
+...
+ValueError: m_b can't be empty
+>>> res = matrix_mul([[1, 2]], [[]])
+Traceback (most recent call last):
+...
+ValueError: m_b can't be empty
+>>> res = matrix_mul([[1, 2]], [[]])
+Traceback (most recent call last):
+...
+ValueError: m_b can't be empty
+>>> res = matrix_mul([[1, 2]], [[5, 6]])
+Traceback (most recent call last):
+...
+ValueError: m_a and m_b can't be multiplied
+>>> res = matrix_mul([[6, 7, 8], [7, 8, 9]], [[7, 8, 9], [7, 8, 9]])
+Traceback (most recent call last):
+...
+ValueError: m_a and m_b can't be multiplied
+>>> res = matrix_mul([[6, 7], [7, 8, 9]], [[7, 8, 9], [7, 8, 9]])
+Traceback (most recent call last):
+...
+TypeError: each row of m_a must be of the same size
+>>> res = matrix_mul([[6, 7, 8], [7, 8, 9]], [[8, 9], [7, 8, 9]])
+Traceback (most recent call last):
+...
+TypeError: each row of m_b must be of the same size
