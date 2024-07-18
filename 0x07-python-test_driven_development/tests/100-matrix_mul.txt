@@ -9,6 +9,7 @@ Tests for multiplying two matrices
 >>> print(res)
 [[7, 10], [15, 22]]
 >>> res = matrix_mul([[1, 2]], [[3, 4], [5, 6]])
+>>> print(res)
 [[13, 16]]
 >>> res = matrix_mul([[1, 2]], 6)
 Traceback (most recent call last):
@@ -21,11 +22,11 @@ TypeError: m_b must be a list
 >>> res = matrix_mul([[1, 2]])
 Traceback (most recent call last):
 ...
-TypeError: matrix_mul missing 1 required positional argument: 'm_b'
+TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
 >>> res = matrix_mul()
-Traceback (most recent call last)
+Traceback (most recent call last):
 ...
-TypeError: matrix_mul missing 2 required positional arguments: 'm_a' and 'm_b'
+TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
 >>> res = matrix_mul(5, [[6, 7], [6, 7]])
 Traceback (most recent call last):
 ...
@@ -34,7 +35,7 @@ TypeError: m_a must be a list
 Traceback (most recent call last):
 ...
 TypeError: m_a must be a list
-res = matrix_mul([1, 2], [[3, 4], [5, 6]])
+>>> res = matrix_mul([1, 2], [[3, 4], [5, 6]])
 Traceback (most recent call last):
 ...
 TypeError: m_a must be a list of lists
