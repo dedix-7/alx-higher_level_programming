@@ -5,6 +5,7 @@
 
 import numpy
 
+
 def lazy_matrix_mul(m_a, m_b):
     """ This function uses the numpy module to multip[ly 2 matrices
     """
