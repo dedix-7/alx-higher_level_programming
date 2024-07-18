@@ -23,5 +23,13 @@ def matrix_mul(m_a, m_b):
     if (len(m_a) == 0):
         raise ValueError("m_a can't be empty")
     for i in m_a:
-        if not (all(isinstance(c, int) for c in m_a)):
-            raise 
+        if (len(i) == 0):
+            raise ValueError("m_a can't be empty")
+        if not (all(isinstance(x, (int, float)) for x in i)):
+            raise TypeError('m_a should contain only integers or floats')
+    for i in m_b:
+        if (len(i) == 0):
+            raise ValueError("m_b can't be empty")
+        if not (all(isinstance(x, (int, float)) for x in i)):
+            raise TypeError('m_b should contain only integers or floats')
+        if l
