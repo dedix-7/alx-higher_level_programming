@@ -107,7 +107,11 @@ class Rectangle(base.Base):
         """ a method to print out the rectangle using the # char
         """
 
+        for i in range(self.__y):
+            print()
         for i in range(self.__height):
+            for x in range(self.__x):
+                print(' ', end='')
             for j in range(self.__width):
                 print('#', end='')
             print()
@@ -118,4 +122,10 @@ class Rectangle(base.Base):
 
         return (f'[Rectangle] {self.id} {self.__x} / {self.__y} - {self.__width} / {self.__height}')
 
-    dfe
+    def update(self, *args):
+        """ method to update the attributes
+        """
+
+        for i in range(5):
+            if (i == 0):
+                args[i]
