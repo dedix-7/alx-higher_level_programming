@@ -15,13 +15,14 @@ class Square(rectangle.Rectangle):
         """
 
         super().__init__(size, size, x, y, id)
-        
+
     def __str__(self):
         """ what to write when retur ning this object\
         """
 
         return f"[Square] ({self.__id}) {self.__x}/{self.__y} - {self.__size}"
 
-    @size.setter
+    @Rectangle.size.setter
     def size(self, value):
+        super(Square, Square).size.__set__(self, value)
         
