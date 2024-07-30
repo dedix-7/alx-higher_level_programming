@@ -128,7 +128,17 @@ class Rectangle(base.Base):
 
         
         attributes = [self.id, self.__width, self.__height, self.__x, self.__y]
+        guesses = [id, width, height, x, y]
         for i in range(len(args)):
             x = attributes[i]
             x = args[i]
-        
+        if ((len(args) <= 0)):
+            if ((len(kwargs) <= 0)):
+                break
+            else:
+                for key, value in kwargs:
+                    if (key in guesses):
+                        setattr(self, key, value)
+
+            
+                            
