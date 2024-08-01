@@ -67,4 +67,23 @@ class Base:
             return (new)
 
     @classmethod
-    
+    def load_from_file(cls):
+        """ Return a list of instances
+        """
+
+        filename = f"{cls.__name__}.csv"
+        lists_dict = []
+        try:
+            with open(filename, 'r', newline="") as csv_file:
+                if cls.__name__ == "Rectangle":
+                    field_names = ['id', 'width', 'height', 'x', 'y']
+                else:
+                    field_names = ["id", "size", "height","x","y"]
+                csv_read = csv.DictReader(csv_file, fieldnames=field_names)
+                for name in csv_read:
+                    row_dicts = {key, int(val) for key, val in name.items()}
+                    lists_dicts.append(row_dicts)
+                return [cls.create(**d) for d in lists_dicts]
+        except IOError:
+            return []
+        
