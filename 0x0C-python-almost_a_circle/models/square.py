@@ -22,7 +22,41 @@ class Square(rectangle.Rectangle):
 
         return f"[Square] ({self.__id}) {self.__x}/{self.__y} - {self.__size}"
 
-    @Rectangle.size.setter
+    @property
+    def size(self):
+        """ Getter for teh size attribute
+        """
+
+        return (self.__size)
+
+    @Rectangle.width.setter
     def size(self, value):
-        super(Square, Square).size.__set__(self, value)
-        
+        """ a setter for the size attribute, inheriting from that of rcevtangle
+        """
+        super(Square, Square).width.__set__(self, value)
+
+    def update(self, *args, **kwargs):
+        """ method to update the attributes
+        """
+
+        attributes = [self.id, self.__size, self.__x, self.__y]
+        guesses = [id, width, height, x, y]
+        for i in range(len(args)):
+            x = attributes[i]
+            x = args[i]
+        if ((len(args) <= 0)):
+            if ((len(kwargs) <= 0)):
+                break
+            else:
+                for key, value in kwargs:
+                    if (key in guesses):
+                        setattr(self, key, value)
+
+    def to_dictionary(self):
+        """ a function to return the dictionary representation of a rectangle
+        """
+
+        return {'id': self.__id, 'size': self.__size, 'x': self.__x,
+                'y': self.__y }
+
+    def 

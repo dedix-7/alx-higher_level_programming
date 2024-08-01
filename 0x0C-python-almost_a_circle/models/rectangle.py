@@ -115,7 +115,7 @@ class Rectangle(base.Base):
             for j in range(self.__width):
                 print('#', end='')
             print()
-        
+
     def __str__(self):
         """ A rectangle prinmting string method
         """
@@ -126,7 +126,6 @@ class Rectangle(base.Base):
         """ method to update the attributes
         """
 
-        
         attributes = [self.id, self.__width, self.__height, self.__x, self.__y]
         guesses = [id, width, height, x, y]
         for i in range(len(args)):
@@ -140,5 +139,10 @@ class Rectangle(base.Base):
                     if (key in guesses):
                         setattr(self, key, value)
 
-            
-                            
+    def to_dictionary(self):
+        """ a function to return the dictionary representation of a rectangle
+        """
+
+        return {'id': self.__id, 'width': self.__width,
+                'height': self.__height, 'x': self.__x,
+                'y': self.__y }
