@@ -5,6 +5,7 @@
 
 import rectangle
 
+
 class Square(rectangle.Rectangle):
     """ A class for the suqare object
     """
@@ -57,6 +58,4 @@ class Square(rectangle.Rectangle):
         """
 
         return {'id': self.__id, 'size': self.__size, 'x': self.__x,
-                'y': self.__y }
-
-    def 
+                'y': self.__y}
