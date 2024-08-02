@@ -11,15 +11,16 @@ class Base:
     """
 
     __nb_objects = 0
+
     def __init__(self, id=None):
         """ The constructor for the class and assigns an id to itself
         """
 
-        if (type(id) is not None):
+        if (id is not None):
             self.id = id
         else:
-            self.__nb_objects += 1
-            self.id = self.__nb_objects
+            type(self).__nb_objects += 1
+            self.id = type(self).__nb_objects
 
     @staticmethod
     def to_json_string(list_dictionaries):
@@ -43,6 +44,7 @@ class Base:
             else:
                 json_string = [obj.to_dictionary() for onj in list_objs]
                 f.write(Base.to_json_string(json_string))
+
     @staticmethod
     def from_json_string(json_string):
         """ Returns the liost of json representation from json string
@@ -78,12 +80,11 @@ class Base:
                 if cls.__name__ == "Rectangle":
                     field_names = ['id', 'width', 'height', 'x', 'y']
                 else:
-                    field_names = ["id", "size", "height","x","y"]
+                    field_names = ["id", "size", "height", "x", "y"]
                 csv_read = csv.DictReader(csv_file, fieldnames=field_names)
                 for name in csv_read:
-                    row_dicts = {key, int(val) for key, val in name.items()}
+                    row_dicts = {(key, int(val)) for key, val in name.items()}
                     lists_dicts.append(row_dicts)
                 return [cls.create(**d) for d in lists_dicts]
         except IOError:
             return []
-        

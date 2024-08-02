@@ -1,14 +1,20 @@
 #!/usr/bin/python3
-""" A file fpor the rectanmgle class that inherits from the Base class
+""" A file for the rectanmgle class that inherits from the Base class
 """
 
-import base
+from models import base
 
 
 class Rectangle(base.Base):
     """A rectangle class that ingherits from the base class
     """
 
+    @property
+    def width(self):
+        """ Property getter for the width attribute
+        """
+
+        return (self.__width)
 
     @width.setter
     def width(self, value):
@@ -24,11 +30,11 @@ class Rectangle(base.Base):
         self.__width = value
 
     @property
-    def width(self):
-        """ Property getter for the width attribute
+    def height(self):
+        """ getter for the height attribute
         """
 
-        return (self.__width)
+        return (self.__height)
 
     @height.setter
     def height(self, value):
@@ -43,11 +49,11 @@ class Rectangle(base.Base):
         return (self.__height)
 
     @property
-    def height(self):
-        """ getter for the height attribute
+    def x(self):
+        """ getter for the x attribute
         """
 
-        return (self.__height)
+        return (self.__x)
 
     @x.setter
     def x(self, value):
@@ -62,31 +68,6 @@ class Rectangle(base.Base):
         self.__x = value
         return (self.__x)
 
-    @property
-    def x(self):
-        """ getter for the x attribute
-        """
-
-        return (self.__x)
-
-    @y.setter
-    def y(self, value):
-        """setter for the y attrbite
-        """
-
-        if (type(value) is not int):
-            raise TypeError('y must be an integer')
-        if (value < 0):
-            raise ValueError('y must be >= 0')
-        self.__y = value
-        return (self.__y)
-
-    @property
-    def y(self):
-        """ getter for teh y attribute
-        """
-
-        return (self.__y)
     def __init__(self, width, height, x=0, y=0, id=None):
         """ Constructor for the rectangle class
         """
@@ -120,7 +101,8 @@ class Rectangle(base.Base):
         """ A rectangle prinmting string method
         """
 
-        return (f'[Rectangle] {self.id} {self.__x} / {self.__y} - {self.__width} / {self.__height}')
+        return (f'[Rectangle] {self.id} {self.__x} / {self.__y} -
+                {self.__width} / {self.__height}')
 
     def update(self, *args, **kwargs):
         """ method to update the attributes
@@ -133,7 +115,7 @@ class Rectangle(base.Base):
             x = args[i]
         if ((len(args) <= 0)):
             if ((len(kwargs) <= 0)):
-                break
+                pass
             else:
                 for key, value in kwargs:
                     if (key in guesses):
@@ -145,4 +127,4 @@ class Rectangle(base.Base):
 
         return {'id': self.__id, 'width': self.__width,
                 'height': self.__height, 'x': self.__x,
-                'y': self.__y }
+                'y': self.__y}
