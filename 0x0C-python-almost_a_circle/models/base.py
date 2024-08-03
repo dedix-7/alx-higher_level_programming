@@ -11,6 +11,7 @@ class Base:
     """
 
     __nb_objects = 0
+    # This will only give the number of objects without ids
 
     def __init__(self, id=None):
         """ The constructor for the class and assigns an id to itself
