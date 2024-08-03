@@ -78,7 +78,6 @@ class Rectangle(base.Base):
         self.__height = height
         super().__init__(id)
 
-
     @property
     def y(self):
         """ getter for the y variable and value
@@ -99,7 +98,6 @@ class Rectangle(base.Base):
         if (value < 0):
             raise ValueError('y must be >= 0')
 
-    
     def area(self):
         """ a method to get the rectangle's area
         """
