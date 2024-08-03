@@ -24,10 +24,10 @@ class TestRectangle(unittest.TestCase):
         """ dfunctionm to run after each test is execuited
         """
 
-        del(self.rec34)
-        del(self.rec00)
-        del(self.rec44)
-        del(self.rec56)
+        del self.rec34
+        del self.rec00
+        del self.rec44
+        del self.rec56
 
     def test_ionit(self):
         """ testing the constructor works as expected
@@ -43,7 +43,9 @@ class TestRectangle(unittest.TestCase):
 
         self.assertIsInstance(self.rec56, Base)
 
-        def test_two_args(self):
+    def test_two_args(self):
+        """ Test the instantiation with two arguments
+        """
         r1 = Rectangle(1, 2)
         r2 = Rectangle(3, 1)
         self.assertEqual(r1.id, r2.id - 1)
@@ -116,3 +118,58 @@ class TestRectangle(unittest.TestCase):
         r = Rectangle(4, 5, 5, 4, 1)
         r.y = 7
         self.assertEqual(r.y, 7)
+
+class TestRectangleWidth(unittest.TestCase):
+    """this class test for initiaization of rectangle width"""
+
+    def test_None_width(self):
+        with self.assertRaises(TypeError):
+            Rectangle(None)
+
+    def test_float_width(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle(3.4, 3)
+
+    def test_string_width(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle("4", 4)
+
+    def test_complex_width(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle((complex(4)), 4)
+
+    def test_dict_width(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle({"x": 4, "y": 6}, 6)
+
+    def test_list_width(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle([1, 2, 3], 7)
+
+    def test_tuple_width(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle((1, 3), 3)
+
+    def test_set_width(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle({1, 2, 3, 4}, 5)
+
+    def test_frozen_width(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle(frozenset({1, 2, 3}), 5)
+
+    def test_range_width(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle(range(7), 5)
+
+    def test_infinite_width(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle(float('inf'), 5)
+
+    def test_negative_width(self):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            Rectangle(-3, 4)
+
+    def test_zero_width(self):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            Rectangle(0, 6)
