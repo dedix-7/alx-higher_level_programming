@@ -87,6 +87,8 @@ class Rectangle(base.Base):
             raise TypeError('y must be an integer')
         if (value < 0):
             raise ValueError('y must be >= 0')
+        self.__y = value
+        return (self.__y)
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """ Constructor for the rectangle class
