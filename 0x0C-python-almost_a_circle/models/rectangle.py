@@ -101,8 +101,9 @@ class Rectangle(base.Base):
         """ A rectangle prinmting string method
         """
 
-        return (f'[Rectangle] {self.id} {self.__x} / {self.__y} -
-                {self.__width} / {self.__height}')
+        rew = f'[Rectangle] {self.id} {self.__x} / {self.__y}'
+        tru = f'- {self.__width} / {self.__height}'
+        return (rew + tru)
 
     def update(self, *args, **kwargs):
         """ method to update the attributes
