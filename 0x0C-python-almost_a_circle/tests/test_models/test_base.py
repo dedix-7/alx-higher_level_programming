@@ -27,14 +27,14 @@ class TestbaseClass(unittest.TestCase):
     def tearDyown(self):
         """Destroy the objects of the Base class after the tests
         """
-        del(self.base1)
-        del(self.baseid)
-        del(self.base3)
-        del(self.basef)
-        del(self.bases)
-        del(self.based)
-        del(self.baseb)
-        del(self.basecom)
+        del self.base1
+        del self.baseid
+        del self.base3
+        del self.basef
+        del self.bases
+        del self.based
+        del self.baseb
+        del self.basecom
 
     def test_objectnumb(self):
         """ test to see the object numbers are updating as needed

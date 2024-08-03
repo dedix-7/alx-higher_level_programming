@@ -68,16 +68,6 @@ class Rectangle(base.Base):
         self.__x = value
         return (self.__x)
 
-    def __init__(self, width, height, x=0, y=0, id=None):
-        """ Constructor for the rectangle class
-        """
-
-        self.__x = x
-        self.__y = y
-        self.__width = width
-        self.__height = height
-        super().__init__(id)
-
     @property
     def y(self):
         """ getter for the y variable and value
@@ -97,6 +87,16 @@ class Rectangle(base.Base):
             raise TypeError('y must be an integer')
         if (value < 0):
             raise ValueError('y must be >= 0')
+
+    def __init__(self, width, height, x=0, y=0, id=None):
+        """ Constructor for the rectangle class
+        """
+
+        self.__x = x
+        self.__y = y
+        self.__width = width
+        self.__height = height
+        super().__init__(id)
 
     def area(self):
         """ a method to get the rectangle's area

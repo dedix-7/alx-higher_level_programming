@@ -19,9 +19,11 @@ class Base:
 
         if (id is not None):
             self.id = id
+            self.check = True
         else:
             type(self).__nb_objects += 1
             self.id = type(self).__nb_objects
+            self.check = False
 
     @staticmethod
     def to_json_string(list_dictionaries):
@@ -94,5 +96,5 @@ class Base:
             """ Define a deleter method for this object
             """
 
-            if (self.id == __nb_objects):
+            if (self.check):
                 __nb_objects -= 1
