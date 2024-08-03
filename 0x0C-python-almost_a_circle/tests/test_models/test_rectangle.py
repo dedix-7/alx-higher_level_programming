@@ -24,6 +24,11 @@ class TestRectangle(unittest.TestCase):
         """ dfunctionm to run after each test is execuited
         """
 
+        del(self.rec34)
+        del(self.rec00)
+        del(self.rec44)
+        del(self.rec56)
+
     def test_ionit(self):
         """ testing the constructor works as expected
         """
@@ -38,4 +43,7 @@ class TestRectangle(unittest.TestCase):
 
         self.assertIsInstance(self.rec56, Base)
     def test_Noneid(self):
+        """ test the super call works when assigning ids
+        """
+
         pass

@@ -89,3 +89,10 @@ class Base:
                 return [cls.create(**d) for d in lists_dicts]
         except IOError:
             return []
+
+        def __del__(self):
+            """ Define a deleter method for this object
+            """
+
+            if (self.id == __nb_objects):
+                __nb_objects -= 1
