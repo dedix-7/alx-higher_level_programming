@@ -4,7 +4,7 @@
 import pickle
 import json
 import csv
-
+import turtle
 
 class Base:
     """ The base class for the almost a circle project
@@ -137,7 +137,7 @@ class Base:
         """
 
         turtl = turtle.Turtle()
-        turtl.screen.bgcolor("#fff")
+        turtl.screen.bgcolor("#ffc0cb")
         turtl.pensize(2)
         turtl.shape("turtle")
         turtl.color("orange")
