@@ -221,7 +221,6 @@ class Rectangle(base.Base):
                 elif key == "y":
                     self.y = value
 
-
     def to_dictionary(self):
         """ a function to return the dictionary representation of a rectangle
         """
