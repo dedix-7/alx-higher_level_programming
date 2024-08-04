@@ -107,7 +107,7 @@ class TestRectangle(unittest.TestCase):
 
     def test_x_setter(self):
         r = Rectangle(4, 5, 5, 4, 1)
-        r.x = 7
+        r._Rectangle__x = 7
         self.assertEqual(r.x, 7)
 
     def test_y_getter(self):
@@ -136,7 +136,7 @@ class TestRectangleWidth(unittest.TestCase):
 
     def test_complex_width(self):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
-            Rectangle((complex(4)), 4)
+            Rectangle((complex(4, 9)), 4)
 
     def test_dict_width(self):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):

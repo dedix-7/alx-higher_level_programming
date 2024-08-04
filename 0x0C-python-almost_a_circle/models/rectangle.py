@@ -14,7 +14,7 @@ class Rectangle(base.Base):
         """ Property getter for the width attribute
         """
 
-        return (self.__width)
+        return (self.width)
 
     @width.setter
     def width(self, value):
@@ -23,9 +23,9 @@ class Rectangle(base.Base):
               Value; value of the widfth
         """
 
-        if (type(value) is not int):
+        if ((type(value)) is not int):
             raise TypeError('width must be an integer')
-        if (value <= 0):
+        if ((value) <= 0):
             raise ValueError('width must be > 0')
         self.__width = value
         return (self.__width)
@@ -62,11 +62,11 @@ class Rectangle(base.Base):
         """
 
         if (type(value) is not int):
-            raise TypeError('x must be an integer')
+            raise TypeError('x must be an integer') from None
         if (value < 0):
-            raise ValueError('x must be >= 0')
+            raise ValueError('x must be >= 0') from None
 
-        self.__x = value
+        self.x = value
         return (self.__x)
 
     @property
@@ -91,14 +91,15 @@ class Rectangle(base.Base):
         self.__y = value
         return (self.__y)
 
+#    width = property(fget=width_get, fset=width_set)
     def __init__(self, width, height, x=0, y=0, id=None):
         """ Constructor for the rectangle class
         """
 
-        self.__x = x
-        self.__y = y
         self.__width = width
         self.__height = height
+        self.__x = x
+        self.__y = y
         super().__init__(id)
 
     def area(self):
