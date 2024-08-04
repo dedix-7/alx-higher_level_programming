@@ -30,6 +30,19 @@ class Rectangle(base.Base):
         self.__width = value
         return (self.__width)
 
+    def set_width(self, value):
+        """ Setter forthe width attribute
+         Args:
+              Value; value of the widfth
+        """
+
+        if ((type(value)) is not (int)):
+            raise TypeError('width must be an integer')
+        if ((value) <= 0):
+            raise ValueError('width must be > 0')
+        self.__width = value
+        return (value)
+
     @property
     def height(self):
         """ getter for the height attribute
@@ -42,6 +55,18 @@ class Rectangle(base.Base):
         """ Setter for the height attribute
         """
 
+        if not isinstance(value, int):
+            raise TypeError('height must be an integer')
+        if (value <= 0):
+            raise ValueError('height must be > 0')
+        self.__height = value
+        return (self.__height)
+
+    def setheight(self, value):
+        """ Setter for the height attribute
+        """
+
+        print('height setter called')
         if not isinstance(value, int):
             raise TypeError('height must be an integer')
         if (value <= 0):
@@ -66,7 +91,19 @@ class Rectangle(base.Base):
         if (value < 0):
             raise ValueError('x must be >= 0') from None
 
-        self.x = value
+        self.__x = value
+        return (self.__x)
+
+    def set_x(self, value):
+        """ Setter for the x value coordinate
+        """
+
+        if (type(value) is not int):
+            raise TypeError('x must be an integer') from None
+        if (value < 0):
+            raise ValueError('x must be >= 0') from None
+
+        self.__x = value
         return (self.__x)
 
     @property
@@ -91,16 +128,34 @@ class Rectangle(base.Base):
         self.__y = value
         return (self.__y)
 
-#    width = property(fget=width_get, fset=width_set)
+    def set_y(self, value):
+        """ Setter for the y variable
+
+        Args:
+            value - value to set y variable to
+        """
+
+        if (type(value) is not int):
+            raise TypeError('y must be an integer')
+        if (value < 0):
+            raise ValueError('y must be >= 0')
+        self.__y = value
+        return (self.__y)
+
     def __init__(self, width, height, x=0, y=0, id=None):
-        """ Constructor for the rectangle class
+        """Constructor for Rectangle class
+           Args:
+              width: width of rectangle
+        height: height of rectangle
+        x: x -coordinate
+        y: y-coordinate
         """
 
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     def area(self):
         """ a method to get the rectangle's area
