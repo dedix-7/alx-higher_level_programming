@@ -26,7 +26,7 @@ class Base:
             self.check = False
 
     @staticmethod
-    def to_json_string(list_dictionaries):
+    def to_json_string(list_dictionaries, sort_keys=True):
         """ returns a json representation of list_dictionaries
         """
 
