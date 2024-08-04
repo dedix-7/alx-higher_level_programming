@@ -45,11 +45,11 @@ class Base:
 
         filename = f"{cls.__name__}.json"
         with open(filename, "w", encoding="utf-8") as fildes:
-            if list_objs is None:
-                f.write("[]")
+            if ((list_objs is None) or (len(list_objs) == 0)):
+                fildes.write("[]")
             else:
-                json_string = [obj.to_dictionary() for onj in list_objs]
-                f.write(Base.to_json_string(json_string))
+                json_string = [obj.to_dictionary() for obj in list_objs]
+                fildes.write(Base.to_json_string(json_string))
 
     @staticmethod
     def from_json_string(json_string):
