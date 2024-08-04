@@ -3,48 +3,142 @@
 """
 import unittest
 from models.base import Base
+from models.rectangle import Rectangle
 
 
 class TestbaseClass(unittest.TestCase):
     """ The class to test the base class
     """
 
-    def setUp(self):
-        """make objects of the base class to be used for all the tests
-        in this class
+    def test_createduict(self):
+        """test fpor a created duict
         """
 
-        self.base1 = Base()
-        self.baseid = Base(9)
-        self.base3 = Base(None)
-        self.basef = Base(7.8)
-        self.bases = Base('string')
-        self.based = Base({'key':'value','key2':'value'})
-        self.baseb = Base(True)
-        self.basecom = Base(complex(6, 7))
+        r1 = Rectangle(10, 7, 2, 8, id=1)
+        one = r1.to_dictionary()
+        string = '[{"id": 1, "width": 10, "height": 7, "x": 2, "y": 8}]'
+        self. assertEqual(Base.to_json_string([one]), string)
 
 
-    def tearDyown(self):
-        """Destroy the objects of the Base class after the tests
+
+class TestBaseInstantiation(unittest.TestCase):
+    """This class represents unittest for testing instantiation
+        of the base class
+    """
+
+    def test_no_args(self):
+        """This function test for no arg passed"""
+
+        b1 = Base()
+        b2 = Base()
+
+        self.assertEqual(b1.id, b2.id - 1)
+
+    def test_three_bases(self):
+        """Test case for three bases instances"""
+
+        b1 = Base()
+        b2 = Base()
+        b3 = Base()
+
+        self.assertEqual(b1.id, b3.id - 2)
+
+    def test_None_id(self):
+        """This test case test for none id passed"""
+
+        b1 = Base(None)
+        b2 = Base(None)
+
+        self.assertEqual(b1.id, b2.id - 1)
+
+    def test_unique_id(self):
+        """Test case for unique id passed"""
+
+        b1 = Base(12)
+        self.assertEqual(b1.id, 12)
+
+    def test_nb_instance_after_uniq_id(self):
+        """Test case checks that the Base class assigns unique
+            IDs properly
         """
-        del self.base1
-        del self.baseid
-        del self.base3
-        del self.basef
-        del self.bases
-        del self.based
-        del self.baseb
-        del self.basecom
 
-    def test_objectnumb(self):
-        """ test to see the object numbers are updating as needed
-        """
+        b1 = Base()
+        b2 = Base(12)
+        b3 = Base()
+        self.assertEqual(b1.id, b3.id - 1)
 
-        self.assertEqual(self.baseid.id, 9)
-        self.assertEqual(self.base1.id, 1)
-        self.assertEqual(self.base3.id, self.base3._Base__nb_objects)
-        self.assertEqual(self.basef.id, 7.8)
-        self.assertEqual(self.bases.id, 'string')
-        self.assertEqual(self.based.id, {'key':'value','key2':'value'})
-        self.assertEqual(self.baseb.id, True)
-        self.assertEqual(self.basecom.id, complex(6,7))
+    def test_public_id(self):
+        """Test case for public ids"""
+
+        b = Base(42)
+        b.id = 12
+        self.assertEqual(12, b.id)
+
+    def test_string_id(self):
+        """Test case for string ids"""
+        b = Base("python")
+        self.assertEqual(b.id, "python")
+
+    def test_float_id(self):
+        """Test case for float ids"""
+
+        b = Base(2.3)
+        self.assertEqual(b.id, 2.3)
+
+    def test_complex_id(self):
+        """Test case for complex id"""
+
+        b = Base(complex(4))
+        self.assertEqual(b.id, complex(4))
+
+    def test_bool_id(self):
+        """Test case for bool id"""
+
+        b = Base(True)
+        self.assertEqual(b.id, True)
+
+    def test_dict_id(self):
+        """Test case for the dictionary id"""
+
+        b = Base({"x": 2, "y": 4})
+        self.assertEqual(b.id, {"x": 2, "y": 4})
+
+    def test_tuple_id(self):
+        """Test case for tuple id"""
+
+        b = Base((1, 3))
+        self.assertEqual(b.id, (1, 3))
+
+    def test_set_id(self):
+        """Test case for set ids"""
+
+        b = Base({1, 2, 3, 4})
+        self.assertEqual(b.id, {1, 2, 3, 4})
+
+    def test_frozenset_id(self):
+        """Test for frozenset id"""
+
+        b = Base(frozenset({1, 2, 3}))
+        self.assertEqual(b.id, frozenset({1, 2, 3}))
+
+    def test_range_id(self):
+        """Test case for range id"""
+
+        b = Base(range(6))
+        self.assertEqual(b.id, range(6))
+
+    def test_infinit_id(self):
+        """Test for infinte id"""
+
+        b = Base(float('inf'))
+        self.assertEqual(b.id, float('inf'))
+
+    def test_two_args(self):
+        """Test case that checks for two arguments"""
+
+        with self.assertRaises(TypeError):
+            Base(2, 3)
+
+
+if __name__ == '__main__':
+    unittest.main()

@@ -26,7 +26,7 @@ class Base:
             self.check = False
 
     @staticmethod
-    def to_json_string(list_dictionaries, sort_keys=True):
+    def to_json_string(list_dictionaries):
         """ returns a json representation of list_dictionaries
         """
 
@@ -36,7 +36,7 @@ class Base:
             for i in list_dictionaries:
                 if (type(i) is not dict):
                     return ('[]')
-        return (json.dumps(list_dictionaries))
+        return (json.dumps(list_dictionaries, sort_keys=False))
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -74,14 +74,6 @@ class Base:
             new.update(**dictionary)
             return (new)
 
-    def __del__(self):
-        """ Define a deleter method for this object
-        """
-
-        if (self.check):
-            __nb_objects -= 1
-
-    @classmethod
     def load_from_file_csv(cls):
         """Deserializing in csv"""
 
