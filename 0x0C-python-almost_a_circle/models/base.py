@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ A base class from where all the others will inherit from
 """
-
+import pickle
 import json
 import csv
 
@@ -30,7 +30,7 @@ class Base:
         """ returns a json representation of list_dictionaries
         """
 
-        if (list_dictionaries is None):
+        if (list_dictionaries is None or len(list_dictionaries) <= 0):
             return ('[]')
         else:
             for i in list_dictionaries:
