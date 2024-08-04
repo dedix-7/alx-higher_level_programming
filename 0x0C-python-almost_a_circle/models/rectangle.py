@@ -225,6 +225,6 @@ class Rectangle(base.Base):
         """ a function to return the dictionary representation of a rectangle
         """
 
-        return {'id': self.__id, 'width': self.__width,
+        return {'id': self.id, 'width': self.__width,
                 'height': self.__height, 'x': self.__x,
                 'y': self.__y}

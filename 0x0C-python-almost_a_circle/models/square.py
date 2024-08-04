@@ -25,7 +25,7 @@ class Square(rectangle.Rectangle):
 
     @property
     def size(self):
-        """ Getter for teh size attribute
+        """ Getter for the size attribute
         """
 
         return (self.__size)
