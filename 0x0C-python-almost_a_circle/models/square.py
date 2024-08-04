@@ -3,7 +3,7 @@
 """
 
 
-import rectangle
+from models import rectangle
 
 
 class Square(rectangle.Rectangle):
@@ -21,7 +21,7 @@ class Square(rectangle.Rectangle):
         """ what to write when retur ning this object\
         """
 
-        return f"[Square] ({self.__id}) {self.__x}/{self.__y} - {self.__size}"
+        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
 
     @property
     def size(self):
@@ -30,7 +30,7 @@ class Square(rectangle.Rectangle):
 
         return (self.__size)
 
-    @Rectangle.width.setter
+    @rectangle.Rectangle.width.setter
     def size(self, value):
         """ a setter for the size attribute, inheriting from that of rcevtangle
         """
@@ -47,7 +47,7 @@ class Square(rectangle.Rectangle):
             x = args[i]
         if ((len(args) <= 0)):
             if ((len(kwargs) <= 0)):
-                break
+                pass
             else:
                 for key, value in kwargs:
                     if (key in guesses):
