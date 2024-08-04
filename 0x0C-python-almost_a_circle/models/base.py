@@ -71,30 +71,52 @@ class Base:
             new.update(**dictionary)
             return (new)
 
-    @classmethod
-    def load_from_file(cls):
-        """ Return a list of instances
-        """
-
-        filename = f"{cls.__name__}.csv"
-        lists_dict = []
-        try:
-            with open(filename, 'r', newline="") as csv_file:
-                if cls.__name__ == "Rectangle":
-                    field_names = ['id', 'width', 'height', 'x', 'y']
-                else:
-                    field_names = ["id", "size", "height", "x", "y"]
-                csv_read = csv.DictReader(csv_file, fieldnames=field_names)
-                for name in csv_read:
-                    row_dicts = {(key, int(val)) for key, val in name.items()}
-                    lists_dicts.append(row_dicts)
-                return [cls.create(**d) for d in lists_dicts]
-        except IOError:
-            return []
-
-        def __del__(self):
+    def __del__(self):
             """ Define a deleter method for this object
             """
 
             if (self.check):
                 __nb_objects -= 1
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Deserializing in csv"""
+
+        filename = "{}.csv".format(cls.__name__)
+        list_dicts = []
+        try:
+            with open(filename, "r", newline="") as csv_file:
+                if cls.__name__ == "Rectangle":
+                    field_names = ["id", "width", "height", "x", "y"]
+                else:
+                    field_names = ["id", "size", "x", "y"]
+                csv_reader = csv.DictReader(csv_file, fieldnames=field_names)
+                for row in csv_reader:
+                    row_dicts = {key: int(val) for key, val in row.items()}
+                    list_dicts.append(row_dicts)
+                return [cls.create(**d) for d in list_dicts]
+        except IOError:
+            return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """This method opens a window and draws all the Rectangles and Squares"""
+
+        turtl = turtle.Turtle()
+        turtl.screen.bgcolor("#fff")
+        turtl.pensize(2)
+        turtl.shape("turtle")
+        turtl.color("orange")
+        for r in list_rectangles:
+            turtl.showturtle()
+            turtl.up()
+            turtl.goto(r.x, r.y)
+            turtl.down()
+            for i  in range(2):
+                turtl.fd(r.width)
+                turtl.rt(90)
+                turtl.fd(r.height)
+                turtl.lt(90)
+            turtl.ht()
+
+        turtl.exitonclick
