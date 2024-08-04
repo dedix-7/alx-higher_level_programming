@@ -76,11 +76,11 @@ class Base:
             return (new)
 
     def __del__(self):
-            """ Define a deleter method for this object
-            """
+        """ Define a deleter method for this object
+        """
 
-            if (self.check):
-                __nb_objects -= 1
+        if (self.check):
+            __nb_objects -= 1
 
     @classmethod
     def load_from_file_csv(cls):
@@ -104,7 +104,8 @@ class Base:
 
     @staticmethod
     def draw(list_rectangles, list_squares):
-        """This method opens a window and draws all the Rectangles and Squares"""
+        """This method opens a window and draws all the Rectangles and Squares
+        """
 
         turtl = turtle.Turtle()
         turtl.screen.bgcolor("#fff")
@@ -116,7 +117,7 @@ class Base:
             turtl.up()
             turtl.goto(r.x, r.y)
             turtl.down()
-            for i  in range(2):
+            for i in range(2):
                 turtl.fd(r.width)
                 turtl.rt(90)
                 turtl.fd(r.height)
