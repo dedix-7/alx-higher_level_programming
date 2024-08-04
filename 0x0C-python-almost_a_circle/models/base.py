@@ -32,12 +32,11 @@ class Base:
 
         if (list_dictionaries is None):
             return ('[]')
-        elif (list_dictionaries is not None):
+        else:
             for i in list_dictionaries:
                 if (type(i) is not dict):
                     return ('[]')
-        else:
-            return (json.dumps(list_dictionaries))
+        return (json.dumps(list_dictionaries))
 
     @classmethod
     def save_to_file(cls, list_objs):
