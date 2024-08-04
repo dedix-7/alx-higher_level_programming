@@ -188,18 +188,39 @@ class Rectangle(base.Base):
         """ method to update the attributes
         """
 
-        attributes = [self.id, self.__width, self.__height, self.__x, self.__y]
-        guesses = [id, width, height, x, y]
-        for i in range(len(args)):
-            x = attributes[i]
-            x = args[i]
-        if ((len(args) <= 0)):
-            if ((len(kwargs) <= 0)):
-                pass
-            else:
-                for key, value in kwargs:
-                    if (key in guesses):
-                        setattr(self, key, value)
+        if args and len(args) != 0:
+            i = 0
+            for arg in args:
+                if i == 0:
+                    if arg is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = arg
+                elif i == 1:
+                    self.width = arg
+                elif i == 2:
+                    self.height = arg
+                elif i == 3:
+                    self.x = arg
+                elif i == 4:
+                    self.y = arg
+                i += 1
+        elif kwargs and len(kwargs) != 0:
+            for key, value in kwargs.items():
+                if key == "id":
+                    if kwargs is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = value
+                elif key == "width":
+                    self.width = value
+                elif key == "height":
+                    self.height = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
+
 
     def to_dictionary(self):
         """ a function to return the dictionary representation of a rectangle
