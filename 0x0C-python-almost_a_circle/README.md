@@ -1,2 +1,3 @@
-# About
-A project to prep for the aiurbnb project
+# Almost a circle project
+A project to help me get ready for the arbnb project
+## Having fun

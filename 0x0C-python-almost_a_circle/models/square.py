@@ -1,78 +1,58 @@
 #!/usr/bin/python3
-""" A modyule for creating squares
+import rectangle
+""" A sqaure class that inherits from rectangle
 """
 
 
-from models import rectangle
-
-
 class Square(rectangle.Rectangle):
-    """ A class for the suqare object
+    """ A special rectangle
     """
 
     def __init__(self, size, x=0, y=0, id=None):
-        """ Constructor for the square class
-            It is a special rectangle
+        """ Initialization inheriting from super
         """
 
-        super().__init__(size, size, x, y, id)
+        super().__init__(size, id, x, y)
+        size = super().__init__(width, height)
 
     def __str__(self):
-        """ what to write when retur ning this object\
+        """ override different string methiods
         """
 
-        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
+        string = f"[Square] ({self.__id}) {self.__x}/{self.__y} - {self.__size}"
+        return (string)
 
     @property
-    def size(self):
-        """ Getter for the size attribute
+    def width(self):
+        """ getter for the width of the class
         """
 
-        return (self.__size)
+        return (super().width())
 
-    @rectangle.Rectangle.width.setter
-    def size(self, value):
-        """ a setter for the size attribute, inheriting from that of rcevtangle
+    @width.setter
+    def width(self, value):
+        """ A setter for the width of the square
         """
-        super(Square, Square).width.__set__(self, value)
+
+        return (super().width(value))
+
+    @property
+    def height(self):
+        """ getter for the height of the square
+        """
+
+        return (super().height())
+
+    @height.setter
+    def height(self, value):
+        """ setter for the square height
+        """
+
+        return (super().height(value))
 
     def update(self, *args, **kwargs):
-        """ method to update the attributes
+        """ update method for the sqaure
         """
 
-        if args and len(args) != 0:
-            i = 0
-            for arg in args:
-                if i == 0:
-                    if arg is None:
-                        self.__init__(self.size, self.x, self.y)
-                    else:
-                        self.id = arg
-                elif i == 1:
-                    self.size = arg
-                elif i == 2:
-                    self.x = arg
-                elif i == 3:
-                    self.y = arg
-                i += 1
-
-        elif kwargs and len(kwargs) != 0:
-            for key, value in kwargs.items():
-                if key == "id":
-                    if kwargs is None:
-                        self.__init__(self.size, self.x, self.y)
-                    else:
-                        self.id = value
-                elif key == "size":
-                    self.size = value
-                elif key == "x":
-                    self.x = value
-                elif key == "y":
-                    self.y = value
-
-    def to_dictionary(self):
-        """ a function to return the dictionary representation of a rectangle
-        """
-
-        return {'id': self.id, 'size': self.size, 'x': self.x,
-                'y': self.y}
+        super().update(*args, **kwargs)
+        
