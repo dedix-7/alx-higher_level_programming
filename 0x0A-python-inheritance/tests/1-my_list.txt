@@ -1,0 +1,40 @@
+============================
+
+Tests for a list class that inherits from int
+
+===========================
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+>>> type(my_list)
+<class '1-my_list.MyList'>
+>>> my_list.append(1)
+>>> my_list.append(2)
+>>> len(my_list)
+2
+>>> my_list.append(8)
+>>> tilist = [2 * n for n in my_list]
+>>> print(tilist)
+[2, 4, 16]
+>>> my_list + tilist
+[1, 2, 8, 2, 4, 16]
+>>> my_list.append(2)
+>>> my_list.append(4)
+>>> my_list.append(16)
+>>> my_list.sort()
+>>> print(my_list)
+[1, 2, 2, 4, 8, 16]
+>>> my_list.print_sorted()
+[1, 2, 2, 4, 8, 16]
+>>> my_list.append(-9)
+>>> my_list.print_sorted()
+[-9, 1, 2, 2, 4, 8, 16]
+>>> my_list.pop(2)
+2
+>>> my_list.print_sorted()
+[-9, 1, 2, 4, 8, 16]
+>>> my_list.pop(0)
+1
+>>> my_list = MyList()
+>>> my_list.print_sorted()
+[]
+>>> my_list.extend([9, 8, 7])
